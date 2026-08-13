@@ -23,7 +23,7 @@ class FCconverter:
   def getdata(this):
     this.dataok=False;
     str=inputstr("Please enter temperature Cxxx or Fxxx")
-    scale=str[0]
+    scale=str[0].upper();
     if (scale!="F" and scale!="C"):
       print(":cross_mark: [red bold]Temperature must start with F or C![/red bold]")
       return;
@@ -36,13 +36,26 @@ class FCconverter:
     this.scale=scale;
     this.dataok=True;
 
+  def convert(this):
+    if (this.scale=="F"):
+      this.converted=(this.val-32)*5/9;
+    else:
+      this.converted=(this.val*9/5)+32
+    this.converted=round(this.converted,2)
+
+  def output(this):
+    if (this.scale=="F"):
+      print(f"\n{this.val}°F equals {this.converted}°C.\n");
+    else:
+      print(f"\n{this.val}°C equals {this.converted}°F.\n");
 
 def main():
   print("\n[green bold]Hello, this software converts temperature from Celsius to Farenheit and vice versa.[/green bold]\n")
   conv=FCconverter()
   conv.getdata()
   if (conv.dataok):
-    print("Data ok")
+    conv.convert()
+    conv.output()
   else:
     print("You have entered incorrect data, see you later.")
 

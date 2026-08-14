@@ -1,3 +1,4 @@
+from rich import print
 from ucimlrepo import fetch_ucirepo 
 
 def main():
@@ -8,11 +9,11 @@ def main():
   X = iris.data.features 
   y = iris.data.targets 
 
-  print("Total number of records is", len(X))
-  print("Total number of different flowers", y.iloc[:, 0].nunique())
-  print("Tha names of all different flowers in the dataset")
+  print("[green]Total number of records is [bold]"+str(len(X))+"[/bold][/green]")
+  print("[green]Total number of different flowers is [bold]"+str(y.iloc[:, 0].nunique())+"[/bold][/green]")
+  print("[green]The names of all different flowers in the dataset[/green]")
   for name in y.iloc[:, 0].unique():
-    print(name)
+    print("[green bold]"+name+"[/green bold]")
   # metadata 
   #print(iris.metadata) 
   

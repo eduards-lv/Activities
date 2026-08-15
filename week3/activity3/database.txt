@@ -1,0 +1,7 @@
+This is the database of students with their corresponding lectures. For each student has related lectures with relation to enrollment.
+
+Each lecture is related to lecturer and to subject.
+
+Additional attributes: Student may also have student card number, enrollment may also have end date, lectures may also have length, lecturers may also have phone, subjects may also have description.
+
+Relationships: Enrollments to students: one to many, Students to lectures: many to many, lecturers to lectures many to many (or one to many if two lecturers can't teach during one lecture), lectures to subjects: one to many.')

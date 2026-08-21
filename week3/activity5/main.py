@@ -8,7 +8,7 @@ class App:
     this.currencies=Currencies()
   
   def showmenu(this):
-    print("\n==== User Manager ====")
+    print("\n==== Currency exchange ====")
     print("1. Add currency")
     print("2. Add rate")
     print("3. Add user")
